@@ -13,7 +13,7 @@ var server = http.createServer(function(req,res){
         console.log('Acessando http://localhost/beleza')
     }else{
         res.end("<html><body>Portal de Noticias</body></html>");
-        console.log('Acessando http://localhost')
+        console.log('Acessando http://localhost:3000')
     }
 });
 
