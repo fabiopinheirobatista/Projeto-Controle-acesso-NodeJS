@@ -20,9 +20,9 @@ module.exports = function(app){
             console.log("Conectado com sucesso!");
         });
 
-        connection.query('select * from noticia', function(err, result){
+        connection.query('select * from noticia', function(error, result){
             console.log(result)
-            console.log(err)
+            console.log(error)
             res.send(result)
         });
     });
