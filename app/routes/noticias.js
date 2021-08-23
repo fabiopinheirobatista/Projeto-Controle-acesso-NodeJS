@@ -6,14 +6,24 @@ module.exports = function(app){
         var connection = mysql.createConnection({
             host: 'localhost',
             user: 'root',
-            password: '',
-            database: 'portal_noticias'
+            password: 'root',
+            database: 'portal_noticias',
+            insecureAuth: true
         });
 
-        connection.query("SELECT * FROM noticias", function(error, result){
-            res.send(result);
+        connection.connect(function(err) {
+            if (err){
+                 console.log("Ocorreu um erro ao conectar."); 
+                 throw err;
+             } 
+       
+            console.log("Conectado com sucesso!");
         });
 
-        //res.render('noticias/noticias');
+        connection.query('select * from noticia', function(err, result){
+            console.log(result)
+            console.log(err)
+            res.send(result)
+        });
     });
 }
