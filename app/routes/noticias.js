@@ -1,5 +1,5 @@
 //module.exports = function(app){
-exports.pool = function(app){
+module.exports = function(app){
     const mysql = require('../views/config/config.json').pool
     app.get('/noticias', function(req,res){
 
@@ -30,10 +30,31 @@ exports.pool = function(app){
             console.log("Conectado com sucesso!");
         });
 
-        connection.query('select * from noticia', function(error, result){
+        mysql.getConnection((error, conn) => {
+            conn.query(
+                'select * from noticia (titulo, noticia)',
+                [req.body.titulo, req.body.noticia],
+                (error, resultado, field) => {
+                    conn.release()
+
+                    if(error){
+                        return res.status(500).send({
+                            error: error,
+                            response: null
+                        })
+                    }
+
+                    res.status(201).send({
+                        mensagem: 'Notícias cadastradas...'
+                    })
+                }
+            )
+        })
+        
+        /*connection.query('select * from noticia', function(error, result){
             console.log(result)
             console.log(error)
             res.send(result)
-        });
+        });*/
     });
 }
