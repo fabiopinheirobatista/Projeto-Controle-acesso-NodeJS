@@ -6,7 +6,7 @@ module.exports = function(app){
         var connection = mysql.createConnection({
             host: 'localhost',
             user: 'root',
-            password: '',
+            password: 'root',
             database: 'portal_noticias'
         });
 
