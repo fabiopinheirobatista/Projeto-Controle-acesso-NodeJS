@@ -7,5 +7,5 @@ var rotaHome = require('./app/routes/home')(app);
 var rotaFormInclusaoNoticia = require('./app/routes/form_inclusao_noticia')(app);
 
 app.listen(3000, function(){
-    console.log("Servidor ON");
+    console.log("Server running on http://localhost:3000/");
 });
