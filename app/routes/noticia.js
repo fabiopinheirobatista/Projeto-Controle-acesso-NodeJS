@@ -1,13 +1,13 @@
-module.exports = (app) => {
+module.exports = function(app) {
 	
-	app.get('/noticia', (req, res) => {
+	app.get('/noticia', function(req, res){
 	
 		var connection = app.config.dbConnection();
 		var noticiasModel = app.app.models.noticiasModel;
 
-		noticiasModel.getNoticia(connection, (error, result) => {
-			res.render("noticias/noticia", {noticia : result})
-		})
-	})
+		noticiasModel.getNoticia(connection, function(error, result){
+			res.render("noticias/noticia", {noticia : result});
+		});	
+	});
 
-}
+};

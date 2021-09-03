@@ -1,16 +1,16 @@
-var mysql = require('mysql')
+var mysql = require('mysql');
 
-var connMySQL = () => {
-	console.log('Conexion with DB successfully completed')
+var connMySQL = function(){
+	console.log('Conexao com bd foi estabelecida');
 	return mysql.createConnection({
 		host : 'localhost',
 		user : 'root',
-		password : 'root',
+		password : '1234',
 		database : 'portal_noticias'
 	});
 }
 
-module.exports = () => {
-	console.log('AUTOLOAD loaded the DB connection module')
-	return connMySQL
+module.exports = function () {
+	console.log('O autoload carregou o módulo de conexão com bd');
+	return connMySQL;
 }
