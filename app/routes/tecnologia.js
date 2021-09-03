@@ -1,5 +1,5 @@
-module.exports = function(app){
-    app.get('/tecnologia', function(req,res){
+module.exports = (app) => {
+    app.get('/tecnologia', (req,res) => {
         res.render('secao/tecnologia');
     });
 }
