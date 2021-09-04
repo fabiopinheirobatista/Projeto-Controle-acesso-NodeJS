@@ -6,7 +6,7 @@ module.exports = (application) => {
 		var noticiasModel = application.app.models.noticiasModel
 
 		noticiasModel.getNoticias(connection, (error, result) => {
-			res.render("noticias/noticias", {noticias : result})
+			res.render('noticias/noticias', {noticias : result})
 		})
 	})
 }
