@@ -7,5 +7,9 @@ module.exports = () => {
 	this.getNoticia = (connection, callback) => {
 		connection.query('select * from noticias where id_noticia = 2', callback)
 	}
+
+	this.salvarNoticia = (noticia, connection, callback) => {
+		//
+	}
 	return this
 }
