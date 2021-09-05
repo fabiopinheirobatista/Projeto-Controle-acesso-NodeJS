@@ -1,11 +1,15 @@
-module.exports = function(){
+function Noticias(){
+	//
+}
 
-	this.getNoticias = function(connection, callback){
-		connection.query('select * from noticias', callback);
-	}
+Noticias.prototype.getNoticias = () => {
+	connection.query('select * from noticias', callback)
+}
 
-	this.getNoticia = function(connection, callback){
-		connection.query('select * from noticias where id_noticia = 2', callback);
+module.exports = () => {
+
+	this.getNoticia = (connection, callback) => {
+		connection.query('select * from noticias where id_noticia = 2', callback)
 	}
 
 	this.salvarNoticia = (noticia, connection, callback) => {
@@ -13,5 +17,5 @@ module.exports = function(){
 		callback()
 	}
 
-	return this;
+	return this
 }
