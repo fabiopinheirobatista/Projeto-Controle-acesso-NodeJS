@@ -1,6 +1,3 @@
-//const Connection = require('mysql/lib/Connection')
-//const Connection = require('../../config/dbConnection')
-
 module.exports = (application) => {
     application.get('/formulario_inclusao_noticia', (req, res) => {
         res.render('admin/form_add_noticia')
