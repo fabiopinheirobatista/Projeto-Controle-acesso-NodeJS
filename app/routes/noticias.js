@@ -1,5 +1,4 @@
 module.exports = (application) => {
-	
 	application.get('/noticias', (req, res) => {
 	
 		var connection = application.config.dbConnection()
