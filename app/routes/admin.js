@@ -1,4 +1,4 @@
-const Connection = require('mysql/lib/Connection')
+//const Connection = require('mysql/lib/Connection')
 //const Connection = require('../../config/dbConnection')
 
 module.exports = (application) => {
@@ -13,7 +13,7 @@ module.exports = (application) => {
 		var noticiasModel = application.app.models.noticiasModel
 
 
-		noticiasModel.salvarNoticia(noticia, (error, result) => {
+		noticiasModel.salvarNoticia(noticia, connection, (error, result) => {
 			//res.send(noticia)
 			res.redirect('/noticias')
 		})
