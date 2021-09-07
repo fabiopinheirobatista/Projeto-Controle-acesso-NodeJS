@@ -9,6 +9,16 @@
 		<h1>Adicionar notícia</h1>
 		<br />
 
+		<% if (typeof invalid !== 'undefined') { %>
+			<ul>
+				<% for (let i=0; i < invalid.length; i++) { %>
+					<li>
+						<%= invalid[i].msg %>
+					</li>
+				<% } %>
+			</ul>
+		<% } %>
+
 		<form action="/noticias/salvar" method="post">
 			<label>Título</label>
 			<input type="text" id="titulo" name="titulo" placeholder="Título da Notícia" />
