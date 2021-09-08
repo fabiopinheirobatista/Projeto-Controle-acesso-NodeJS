@@ -7,15 +7,14 @@
 	<title>Formulário de cadastro de Notícia</title>
 </head>
 <body>
-
 		<h1>Adicionar notícia</h1>
 		<br />
 
 		<% if(validacao) { %>
 			<ul>
-				<% for(var i = 0; i < validacao.length; i++) { %>
+				<% for(var i = 0; i < validacao.length; i++){ %>
 					<li>
-						<% = validacao[i].msg %>
+						<%= validacao[i].msg %>
 					</li>
 				<% } %>
 			</ul>
@@ -41,7 +40,6 @@
 			<textarea id="noticia" name="noticia" rows="10" cols="50"></textarea>
 			<br />
 			<input type="submit" value="Enviar" />
-		</form>
 
 </body>
 </html>
