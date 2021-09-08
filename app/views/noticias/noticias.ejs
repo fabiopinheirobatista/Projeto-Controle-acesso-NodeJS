@@ -11,8 +11,12 @@
 		<table>
 			
 			<tr>
-				<td>ID</td>
-				<td>Título</td>
+				<td><b>ID</b></td>
+				<td><b>Título da Notícia</b></td>
+				<td><b>Resumo da Notícia</b></td>
+				<td><b>Autor (a)</b></td>
+				<td><b>Notícia</b></td>
+				<td><b>Data da Notícia</b></td>
 			</tr>
 			<% for(var i = 0; i < noticias.length; i++){ %>
 				<tr>
@@ -20,6 +24,7 @@
 					<td><%= noticias[i].titulo %></td>
 					<td><%= noticias[i].resumo %></td>
 					<td><%= noticias[i].autor %></td>
+					<td><%= noticias[i].noticia %></td>
 					<td><%= noticias[i].data_noticia %></td>
 				</tr>
 			<% } %>
